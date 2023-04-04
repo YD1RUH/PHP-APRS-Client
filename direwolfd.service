@@ -1,0 +1,9 @@
+[Unit]
+Description=Direwolf service
+
+[Service]
+WorkingDirectory=/var/www/html/APRS
+ExecStart=/bin/bash -c '/usr/local/bin/direwolf -c /var/www/html/APRS/dwnet.conf -t 0 | curtail -s 5K /var/www/html/APRS/direwolf.log & while true; do grep -nr "YD1RUH" /var/www/html/APRS/direwolf.log; sleep 1; done | curtail -s 5K /var/www/html/APRS/messages.log' &
+
+[Install]
+WantedBy=multi-user.target
