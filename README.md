@@ -11,11 +11,12 @@ an APRS client programmed using PHP.
 -  linux OS
 
 # step by step
-## create service direwolf
+## create service
 - ```cd /var/www/html```
 - ```sudo git clone https://github.com/YD1RUH/PHP-APRS-Client.git```
 - ```sudo mv PHP-APRS-Client APRS```
 - ```cd APRS```
+- change the CALLSIGN and PASSCODE with yours at file dwnet.conf with nano ```sudo nano dwnet.conf```
 - open the service file with nano ```sudo nano direwolfd.service```
 - change ther service with your callsign near ```grep``` command
 - ```sudo cp direwolfd.service /etc/systemd/system/```
