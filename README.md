@@ -6,7 +6,7 @@ an APRS client programmed using PHP.
 -  curtail, visit here and build from source https://github.com/Comcast/Infinite-File-Curtailer
 -  apache2, ```sudo apt install apache2```
 -  PHP, ```sudo apt install php```
--  direwolf, ```sudo apt install direwolf``` or build from source ```https://github.com/wb2osz/direwolf```
+-  direwolf, ```sudo apt install direwolf``` or build from source https://github.com/wb2osz/direwolf
 -  bash
 -  linux OS
 
