@@ -16,6 +16,17 @@ an APRS client programmed using PHP.
 - ```sudo git clone https://github.com/YD1RUH/PHP-APRS-Client.git```
 - ```sudo mv PHP-APRS-Client APRS```
 - ```cd APRS```
+- open the service file with nano ```sudo nano direwolfd.service```
+- change ther service with your callsign ```[Unit]
+Description=Direwolf service
+
+[Service]
+WorkingDirectory=/var/www/html/APRS
+ExecStart=/bin/bash -c '/usr/local/bin/direwolf -c /var/www/html/APRS/dwnet.conf -t 0 | curtail -s 5K /var/www/html/APRS/direwolf.log & while true; do grep -nr "YOUR CALLSIGN PUT HERE" /var/www/html/APRS/direwolf.log; sleep 1; done | curtail -s 5K /var/www/html/APRS/messages.log' &
+
+[Install]
+WantedBy=multi-user.target
+ ```
 - ```sudo cp direwolfd.service /etc/systemd/system/```
 - ```sudo systemctl daemon-reload```
 - ```sudo systemctl enable direwolfd.service```
